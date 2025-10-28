@@ -2,8 +2,6 @@
 
 ## Milestone 1
 
-Complete the assignment as specified on [the inter-section website](https://w3.cs.jmu.edu/cs343/f25/project/), but:
-
 # FIXTURE FLOW: A website to check your favorite soccer team’s schedule and scores
 
 **Team name:** Group Name (Hayden Murphey)
@@ -36,9 +34,6 @@ Users will be working with CRUD to improve their experience. This can be seen in
 * **Read:** The users will be able to interact with the API’s data that will display game dates, times, etc.
 * **Update:** They will be able to see up-to-date information on upcoming fixtures utilizing the API data, and when they make changes on their team, that will also be updated.
 * **Delete:** Similar to the above points, that
-
-1. Convert your narrative to markdown and include it in this section of README.md
-2. Put your design files (draw.io or otherwise) in the `design/` directory
 
 ## Milestone 2
 

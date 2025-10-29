@@ -32,7 +32,7 @@ body {
 }
 
 /* Set max-widths for container */
-@media (min-width: var(--breakpoint-lg)) { 
+@media (min-width: 992px) { 
     .container { max-width: 960px; } 
 }
 
@@ -66,7 +66,7 @@ body {
 
 /* 4. Responsive Columns (col-lg-*) */
 /* At or above the 'lg' breakpoint... */
-@media (min-width: var(--breakpoint-lg)) {
+@media (min-width: 992px) {
     .col-lg-4 {
         flex-basis: 33.33333%;
         max-width: 33.33333%;
@@ -83,7 +83,7 @@ body {
 .order-3 { order: 3; }
 
 /* Responsive order for 'lg' breakpoint */
-@media (min-width: var(--breakpoint-lg)) {
+@media (min-width: 992px) {
     .order-lg-2 { order: 2; }
     .order-lg-3 { order: 3; }
 }
@@ -136,7 +136,7 @@ body {
     margin-top: calc(var(--gutter-width) / 2);
 }
 
-@media (min-width: var(--breakpoint-lg)) {
+@media (min-width: 992px) {
     /* Remove top margin on desktop */
     .search-box {
         margin-top: 0;
@@ -153,7 +153,6 @@ body {
     border: 1px solid #ddd;
     padding: 1.5rem;
     border-radius: 0.25rem;
-    height: 100%;
 }
 
 /* Add margin to the bottom of content columns on mobile */
@@ -166,13 +165,7 @@ body {
     margin-bottom: 0;
 }
 
-@media (min-width: var(--breakpoint-lg)) {
-    /* On desktop, make the row a flex container to enable equal height columns */
-    .main-content > .container > .row {
-        display: flex;
-    }
-    
-    /* On desktop, remove the mobile stacking margin */
+@media (min-width: 992px) {
     .main-content .col-12 {
         margin-bottom: 0;
     }

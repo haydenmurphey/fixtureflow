@@ -38,7 +38,7 @@ body {
 }
 
 /* 3. The Columns (col-*) */
-.col-3, .col-6, .col-12, .col-lg-2, .col-lg-4, .col-lg-6 {
+.col-3, .col-12, .col-lg-2, .col-lg-4, .col-lg-6, .col-lg-12 {
     position: relative;
     width: 100%;
     padding-right: calc(1rem / 2);
@@ -50,11 +50,6 @@ body {
 .col-3 {
     flex-basis: 25%;
     max-width: 25%;
-}
-
-.col-6 {
-    flex-basis: 50%;
-    max-width: 50%;
 }
 
 .col-12 {
@@ -75,6 +70,10 @@ body {
     .col-lg-6 {
         flex-basis: 50%;
         max-width: 50%;
+    }
+    .col-lg-12 {
+        flex-basis: 100%;
+        max-width: 100%;
     }
 }
 

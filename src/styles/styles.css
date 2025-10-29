@@ -1,10 +1,4 @@
 
-/* --- Global & Variables --- */
-:root {
-    --breakpoint-lg: 992px; 
-    --gutter-width: 1rem; 
-}
-
 /* Universal box-sizing for predictable layouts */
 *,
 *::before,
@@ -25,8 +19,8 @@ body {
 /* 1. The Container */
 .container {
     width: 100%;
-    padding-right: calc(var(--gutter-width) / 2);
-    padding-left: calc(var(--gutter-width) / 2);
+    padding-right: calc(1rem / 2);
+    padding-left: calc(1rem / 2);
     margin-right: auto;
     margin-left: auto;
 }
@@ -40,16 +34,16 @@ body {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: calc(-0.5 * var(--gutter-width));
-    margin-left: calc(-0.5 * var(--gutter-width));
+    margin-right: calc(-0.5 * 1rem);
+    margin-left: calc(-0.5 * 1rem);
 }
 
 /* 3. The Columns (col-*) */
 .col-6, .col-12, .col-lg-4, .col-lg-6 {
     position: relative;
     width: 100%;
-    padding-right: calc(var(--gutter-width) / 2);
-    padding-left: calc(var(--gutter-width) / 2);
+    padding-right: calc(1rem / 2);
+    padding-left: calc(1rem / 2);
     flex-shrink: 0; /* Prevent columns from shrinking */
 }
 
@@ -131,9 +125,14 @@ body {
     color: #fff;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 /* Give search bar correct vertical padding on mobile */
 .search-box {
-    margin-top: calc(var(--gutter-width) / 2);
+    margin-top: calc(1rem / 2);
 }
 
 @media (min-width: 992px) {

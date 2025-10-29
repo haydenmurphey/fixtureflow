@@ -1,11 +1,8 @@
 
 /* --- Global & Variables --- */
 :root {
-    /* Breakpoint for 'lg' classes */
     --breakpoint-lg: 992px; 
-    
-    /* Gutters (spacing between columns) */
-    --gutter-width: 1rem; /* 24px */
+    --gutter-width: 1rem; 
 }
 
 /* Universal box-sizing for predictable layouts */
@@ -23,7 +20,7 @@ body {
     color: #333;
 }
 
-/* --- Bootstrap Grid System (Mini) --- */
+/* --- Bootstrap Grid System --- */
 
 /* 1. The Container */
 .container {
@@ -34,11 +31,10 @@ body {
     margin-left: auto;
 }
 
-/* Set max-widths for containers at different breakpoints */
-@media (min-width: 576px) { .container { max-width: 540px; } }
-@media (min-width: 768px) { .container { max-width: 720px; } }
-@media (min-width: var(--breakpoint-lg)) { .container { max-width: 960px; } }
-@media (min-width: 1200px) { .container { max-width: 1140px; } }
+/* Set max-widths for container */
+@media (min-width: var(--breakpoint-lg)) { 
+    .container { max-width: 960px; } 
+}
 
 /* 2. The Row */
 .row {
@@ -157,7 +153,7 @@ body {
     border: 1px solid #ddd;
     padding: 1.5rem;
     border-radius: 0.25rem;
-    height: 100%; /* Ensures blocks in a row are equal height */
+    height: 100%;
 }
 
 /* Add margin to the bottom of content columns on mobile */

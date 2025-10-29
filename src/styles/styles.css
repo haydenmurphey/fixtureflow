@@ -1,0 +1,191 @@
+
+/* --- Global & Variables --- */
+:root {
+    /* Breakpoint for 'lg' classes */
+    --breakpoint-lg: 992px; 
+    
+    /* Gutters (spacing between columns) */
+    --gutter-width: 1rem; /* 24px */
+}
+
+/* Universal box-sizing for predictable layouts */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* --- Bootstrap Grid System (Mini) --- */
+
+/* 1. The Container */
+.container {
+    width: 100%;
+    padding-right: calc(var(--gutter-width) / 2);
+    padding-left: calc(var(--gutter-width) / 2);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Set max-widths for containers at different breakpoints */
+@media (min-width: 576px) { .container { max-width: 540px; } }
+@media (min-width: 768px) { .container { max-width: 720px; } }
+@media (min-width: var(--breakpoint-lg)) { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+
+/* 2. The Row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(-0.5 * var(--gutter-width));
+    margin-left: calc(-0.5 * var(--gutter-width));
+}
+
+/* 3. The Columns (col-*) */
+.col-6, .col-12, .col-lg-4, .col-lg-6 {
+    position: relative;
+    width: 100%;
+    padding-right: calc(var(--gutter-width) / 2);
+    padding-left: calc(var(--gutter-width) / 2);
+    flex-shrink: 0; /* Prevent columns from shrinking */
+}
+
+/* Mobile-first column widths */
+.col-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+
+.col-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+}
+
+/* 4. Responsive Columns (col-lg-*) */
+/* At or above the 'lg' breakpoint... */
+@media (min-width: var(--breakpoint-lg)) {
+    .col-lg-4 {
+        flex-basis: 33.33333%;
+        max-width: 33.33333%;
+    }
+    .col-lg-6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+}
+
+/* 5. Order Utilities */
+/* Mobile-first order */
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+
+/* Responsive order for 'lg' breakpoint */
+@media (min-width: var(--breakpoint-lg)) {
+    .order-lg-2 { order: 2; }
+    .order-lg-3 { order: 3; }
+}
+
+/* 6. Flex Utilities */
+.align-items-center {
+    align-items: center;
+}
+
+/* --- Component Styling --- */
+
+/* Basic form-control styles */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+/* --- Page Structure & Demo Styles --- */
+
+.page-header {
+    background-color: #dee2e6;
+    padding: 1rem 0;
+    border-bottom: 1px solid #c8ced3;
+}
+
+/* Blue box styles */
+.blue-box {
+    background-color: #001D44;
+    border: 1px solid #ced4da;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Give search bar correct vertical padding on mobile */
+.search-box {
+    margin-top: calc(var(--gutter-width) / 2);
+}
+
+@media (min-width: var(--breakpoint-lg)) {
+    /* Remove top margin on desktop */
+    .search-box {
+        margin-top: 0;
+    }
+}
+
+.main-content {
+    padding: 2rem 0;
+}
+
+/* Demo box for main content */
+.content-block {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    height: 100%; /* Ensures blocks in a row are equal height */
+}
+
+/* Add margin to the bottom of content columns on mobile */
+.main-content .col-12 {
+    margin-bottom: 1.5rem;
+}
+
+/* Remove margin from the last column on mobile */
+.main-content .col-12:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: var(--breakpoint-lg)) {
+    /* On desktop, make the row a flex container to enable equal height columns */
+    .main-content > .container > .row {
+        display: flex;
+    }
+    
+    /* On desktop, remove the mobile stacking margin */
+    .main-content .col-12 {
+        margin-bottom: 0;
+    }
+}
+
+.page-footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}

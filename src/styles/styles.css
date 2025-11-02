@@ -202,6 +202,13 @@ p, ol {
     font-family: 'Times New Roman', Times, serif;
 }
 
+.content-block img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
 /* Add margin to the bottom of content columns on mobile */
 .main-content .col-12 {
     margin-bottom: 1.5rem;

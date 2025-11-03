@@ -234,8 +234,6 @@ p, ol {
     margin-top: 2rem;
 }
 
-/* --- NEW STYLES ADDED BELOW --- */
-
 .form-group {
     margin-bottom: 1rem;
 }
@@ -253,7 +251,7 @@ p, ol {
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    background-color: #001D44; /* Using the same blue as your boxes */
+    background-color: #001D44;
     border: 1px solid #001D44;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -265,33 +263,14 @@ p, ol {
     opacity: 0.9;
 }
 
-#delete-profile-btn {
-    background-color: #dc3545; /* Red for delete action */
-    border-color: #dc3545;
-    margin-top: 1rem;
-}
-
-#delete-profile-btn:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
-}
-
-/* --- STYLES FOR LEAGUE DROPDOWN --- */
-
-/* This container will center the dropdown */
 .league-dropdown-container {
     display: flex;
     justify-content: center;
-    margin-top: 1.5rem; /* Adds space below the <p> tag */
+    margin-top: 1.5rem; 
 }
 
-/* This styles the select element itself */
 .league-select {
-    width: 100%; /* Full width on mobile */
-    max-width: 500px; /* Max width on desktop */
+    width: 100%; 
+    max-width: 500px; 
     cursor: pointer;
 }
-
-/* You had a closing brace } at the very end of your original file. 
-   I am assuming it was a typo and have removed it. 
-   If it was intentional, you may need to add it back. */

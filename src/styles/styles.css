@@ -148,7 +148,7 @@ body {
 }
 
 .page-header {
-    background-color: #b6d5f4;
+    background-color: #d5e3f1;
     padding: 1rem 0;
     border-bottom: 1px solid #c8ced3;
 }
@@ -227,7 +227,7 @@ p, ol {
 }
 
 .page-footer {
-    background-color: #343a40;
+    background-color: #001D44;    
     color: #f8f9fa;
     text-align: center;
     padding: 2rem 0;

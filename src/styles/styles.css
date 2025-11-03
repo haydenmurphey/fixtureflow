@@ -234,16 +234,6 @@ p, ol {
     margin-top: 2rem;
 }
 
-/* (Your existing CSS code...) */
-
-.page-footer {
-    background-color: #343a40;
-    color: #f8f9fa;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
-}
-
 /* --- NEW STYLES ADDED BELOW --- */
 
 .form-group {
@@ -285,3 +275,23 @@ p, ol {
     background-color: #c82333;
     border-color: #bd2130;
 }
+
+/* --- STYLES FOR LEAGUE DROPDOWN --- */
+
+/* This container will center the dropdown */
+.league-dropdown-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem; /* Adds space below the <p> tag */
+}
+
+/* This styles the select element itself */
+.league-select {
+    width: 100%; /* Full width on mobile */
+    max-width: 500px; /* Max width on desktop */
+    cursor: pointer;
+}
+
+/* You had a closing brace } at the very end of your original file. 
+   I am assuming it was a typo and have removed it. 
+   If it was intentional, you may need to add it back. */

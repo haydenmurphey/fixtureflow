@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MILESTONE 2</title>
+    <!-- Make sure the path to styles.css is correct -->
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
@@ -65,7 +65,20 @@
                         <div class="blue-box">
                             LEAGUES
                         </div>
-                        <p>Content block for Leagues, unimplemented until API data is setup</p>
+                        <p>Select one of the top five leagues below to be taken to their official website:</p>
+
+                        <!-- New Dropdown Container -->
+                        <div class="league-dropdown-container">
+                            <select id="league-redirect-select" class="form-control league-select">
+                                <option value="" selected disabled>Select a league...</option>
+                                <option value="https://www.premierleague.com/en/">Premier League</option>
+                                <option value="https://www.laliga.com/en-GB">LaLiga</option>
+                                <option value="https://www.legaseriea.it/en">Serie A</option>
+                                <option value="https://ligue1.com/en">Ligue 1</option>
+                                <option value="https://www.bundesliga.com/en/bundesliga">Bundesliga</option>
+                            </select>
+                        </div>
+
                     </div>
                 </div>
 
@@ -79,6 +92,18 @@
             <p>MILESTONE 2</p>
         </div>
     </footer>
+
+    <!-- JS for dropdown menu redirect -->
+    <script>
+        document.getElementById('league-redirect-select').addEventListener('change', function() {
+
+            var selectedUrl = this.value;
+            
+            window.open(selectedUrl, '_blank');
+
+                this.selectedIndex = 0;
+        });
+    </script>
 
 </body>
 </html>

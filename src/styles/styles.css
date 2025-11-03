@@ -233,3 +233,55 @@ p, ol {
     padding: 2rem 0;
     margin-top: 2rem;
 }
+
+/* (Your existing CSS code...) */
+
+.page-footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+/* --- NEW STYLES ADDED BELOW --- */
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #001D44; /* Using the same blue as your boxes */
+    border: 1px solid #001D44;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+#delete-profile-btn {
+    background-color: #dc3545; /* Red for delete action */
+    border-color: #dc3545;
+    margin-top: 1rem;
+}
+
+#delete-profile-btn:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}

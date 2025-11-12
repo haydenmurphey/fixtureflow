@@ -296,3 +296,11 @@ p, ol {
 .main-content .col-12:last-child {
     margin-bottom: 0;
 }
+
+#my-team-content a {
+    /* This is a standard blue. For best results, replace it 
+      with the exact background-color you use for your .blue-box class.
+    */
+    color: #001D44;
+    text-decoration: underline; /* Makes it clear it's a clickable link */
+}

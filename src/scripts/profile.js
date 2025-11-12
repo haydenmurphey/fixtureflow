@@ -46,8 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function showProfile(profile) {
         profileFormContainer.style.display = 'none';
         profileDisplayContainer.style.display = 'block';
-        displayMessage.textContent = `Your favorite team is: ${profile.team}`;
-    }
+        displayMessage.innerHTML = `Your favorite team is: <strong>${profile.team}</strong>`;    }
 
     function showForm() {
         profileFormContainer.style.display = 'block';

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,8 +64,8 @@
                         </div>
 
                         <div id="profile-display-container" style="display: none;">
-                            <h2 id="displayName">Name</h2>
-                            <p><strong>Favorite Team:</strong> <span id="displayTeam"></span></p>
+                            <h3>Your Profile</h3>
+                            <p id="display-message"></p>
                             <button id="delete-profile-btn" class="btn" type="button">Delete Profile</button>
                         </div>
 
@@ -79,8 +78,16 @@
                                     <input type="text" id="name" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="favorite-team">Favorite Team:</label>
-                                    <input type="text" id="favorite-team" class="form-control" required>
+                                    <label for="league-select">Favorite League:</label>
+                                    <select id="league-select" class="form-control" required>
+                                        <option value="" selected disabled>Select a league...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="team-select">Favorite Team:</label>
+                                    <select id="team-select" class="form-control" required disabled>
+                                        <option value="" selected disabled>Select a league first...</option>
+                                    </select>
                                 </div>
                                 <button type="submit" class="btn">Create Profile</button>
                             </form>
@@ -98,6 +105,6 @@
         </div>
     </footer>
 
-    <script src="js/profile.js"></script>
+    <script src="scripts/profile.js"></script>
 </body>
 </html>

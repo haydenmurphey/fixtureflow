@@ -298,9 +298,38 @@ p, ol {
 }
 
 #my-team-content a {
-    /* This is a standard blue. For best results, replace it 
-      with the exact background-color you use for your .blue-box class.
-    */
     color: #001D44;
     text-decoration: underline; /* Makes it clear it's a clickable link */
+}
+
+/* Add this to your styles/styles.css file */
+
+.search-box {
+    position: relative;
+}
+
+#autocomplete-results {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position it right below the input */
+    left: 0;
+    right: 0;
+    border: 1px solid #ddd;
+    background-color: white;
+    z-index: 1000;
+    max-height: 150px;
+    overflow-y: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#autocomplete-results div {
+    padding: 10px;
+    cursor: pointer;
+    color: #001D44; /* Dark text for readability */
+    font-size: 1rem;
+}
+
+#autocomplete-results div:hover {
+    background-color: #f0f0f0;
 }

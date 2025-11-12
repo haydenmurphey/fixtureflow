@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MILESTONE 2 - Profile</title>
+    <title>Team Details</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
@@ -53,44 +53,12 @@
     <main class="main-content">
         <div class="container">
             <div class="row">
-
-                <div class="col-12 col-lg-12">
+                <div class="col-12">
                     <div class="content-block">
-                        <div class="blue-box" id="main-profile-header">
-                            PROFILE
-                        </div>
-
-                        <div id="profile-display-container" style="display: none;">
-                            <h3>Your Profile</h3>
-                            <p id="display-message"></p>
-                            <button id="delete-profile-btn" class="btn" type="button">Delete Profile</button>
-                        </div>
-
-                        <div id="profile-form-container">
-                            <p>Follow your favorite team.</p>
-                            <form id="profile-form">
-                                <div class="form-group">
-                                    <label for="name">Name:</label>
-                                    <input type="text" id="name" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="league-select">Favorite League:</label>
-                                    <select id="league-select" class="form-control" required>
-                                        <option value="" selected disabled>Select a league...</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="team-select">Favorite Team:</label>
-                                    <select id="team-select" class="form-control" required disabled>
-                                        <option value="" selected disabled>Select a league first...</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn">Create Profile</button>
-                            </form>
-                        </div>
+                        <h1 id="team-name-header">Loading...</h1>
+                        <p id="team-details-content">Fetching team details.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>
@@ -99,11 +67,10 @@
         <div class="container">
             <p>MILESTONE 2</p>
         </div>
-
     </footer>
-    <script src="scripts/data.js"></script>
-    <script src="scripts/search.js"></script>
-    <script src="scripts/profile.js"></script>
 
+    <script src="scripts/data.js"></script>
+    <script src="scripts/team.js"></script>
+    <script src="scripts/search.js"></script>
 </body>
 </html>

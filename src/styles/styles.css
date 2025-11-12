@@ -317,7 +317,7 @@ p, ol {
     border: 1px solid #ddd;
     background-color: white;
     z-index: 1000;
-    max-height: 150px;
+    max-height: 200px;
     overflow-y: auto;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;

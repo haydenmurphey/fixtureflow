@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (teamData) {
             // If team is found, update the HTML content
-            teamNameHeader.textContent = teamData;
+            teamNameHeader.textContent = teamData.toUpperCase();
             teamDetailsContent.textContent = `This page contains details for ${teamData}, who play in the ${leagueName}.`;
             document.title = teamData; // Update the page title as well
         } else {

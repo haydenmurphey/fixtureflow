@@ -40,13 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const leagueSelect = document.getElementById('league-select');
     const teamSelect = document.getElementById('team-select');
     const nameInput = document.getElementById('name');
+    const mainProfileHeader = document.getElementById('main-profile-header');
 
     // --- Functions ---
 
     function showProfile(profile) {
         profileFormContainer.style.display = 'none';
         profileDisplayContainer.style.display = 'block';
-        displayMessage.innerHTML = `Your favorite team is: <strong>${profile.team}</strong>`;    }
+        displayMessage.innerHTML = `Your favorite team is: <strong>${profile.team}</strong>`;
+    }
 
     function showForm() {
         profileFormContainer.style.display = 'block';
@@ -96,13 +98,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         localStorage.setItem('userProfile', JSON.stringify(userProfile));
         alert('Profile created successfully!');
-        showProfile(userProfile);
+        
+        // Update header text on profile creation
+        mainProfileHeader.textContent = `WELCOME ${userProfile.name.toUpperCase()}!`;        showProfile(userProfile);
     });
 
     deleteProfileBtn.addEventListener('click', function () {
         if (confirm('Are you sure you want to delete your profile?')) {
             localStorage.removeItem('userProfile');
             alert('Profile deleted.');
+
+            // Update header text on profile deletion
+            mainProfileHeader.textContent = 'CREATE A PROFILE!';
             showForm();
         }
     });
@@ -114,8 +121,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const savedProfile = localStorage.getItem('userProfile');
 
     if (savedProfile) {
-        showProfile(JSON.parse(savedProfile));
+        const userProfile = JSON.parse(savedProfile);
+        // If profile exists, set welcome message
+        mainProfileHeader.textContent = `WELCOME ${userProfile.name.toUpperCase()}!`;        showProfile(userProfile);
     } else {
+        // If no profile, set create profile message
+        mainProfileHeader.textContent = 'CREATE A PROFILE!';
         showForm();
     }
 });

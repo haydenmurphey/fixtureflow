@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     teamContent.innerHTML = `<p>${teamName} is currently active in ${data.runningCompetitions.length} competitions.</p>`;
                     
                     data.runningCompetitions.forEach(comp => {
-                        fetchStandingsAndRenderChart(comp.id, comp.name, teamName);
+                        // Pass teamId to the next function
+                        fetchStandingsAndRenderChart(comp.id, comp.name, teamName, teamId);
                     });
                 } else {
                     teamContent.innerHTML = `<p>${teamName} is not currently active in any supported competitions.</p>`;
@@ -50,16 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    function fetchStandingsAndRenderChart(compId, compName, myTeamName) {
+    function fetchStandingsAndRenderChart(compId, compName, myTeamName, myTeamId) {
         fetch(`proxy.php?type=standings&id=${compId}`)
             .then(response => response.json())
             .then(data => {
                 const standingNode = data.standings.find(s => s.type === 'TOTAL');
 
                 if (standingNode && standingNode.table) {
-                    // Filter logic: Show top 10 + my team (if not in top 10)
-                    // Or simply show the top 15 to keep the chart readable
-                    createChart(compName, standingNode.table, myTeamName);
+                    // Pass myTeamId to the chart function
+                    createChart(compName, standingNode.table, myTeamName, myTeamId);
                 }
             })
             .catch(err => {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    function createChart(competitionName, tableData, myTeamName) {
+    function createChart(competitionName, tableData, myTeamName, myTeamId) {
         // Create column
         const colDiv = document.createElement('div');
         colDiv.className = 'col-12 col-lg-12'; 
@@ -84,8 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const canvasContainer = document.createElement('div');
         canvasContainer.style.position = 'relative';
         
-        // Calculate dynamic height: 40px per team + buffer
-        // This ensures bars don't get squished
+        // Calculate dynamic height: 30px per team + buffer
         const chartHeight = (tableData.length * 30) + 50; 
         canvasContainer.style.height = `${chartHeight}px`;
 
@@ -109,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
             chartLabels.push(labelName);
             chartPoints.push(row.points);
 
-            // Highlight Logic
-            if (row.team.name === myTeamName || row.team.shortName === myTeamName || (row.team.name && row.team.name.includes(myTeamName))) {
+            // Highlight Logic: Check ID instead of Name
+            if (row.team.id === myTeamId) {
                 backgroundColors.push('#001D44'); // Dark Blue for your team
                 borderColors.push('#001D44');
             } else {

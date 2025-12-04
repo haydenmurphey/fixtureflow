@@ -72,7 +72,6 @@ function renderTeamDetails(data) {
                     <li style="margin-bottom: 10px;"><strong>🎨 Club Colors:</strong> ${data.clubColors}</li>
                     <li style="margin-bottom: 10px;"><strong>👔 Head Coach:</strong> ${coachName}</li>
                     <li style="margin-bottom: 10px;"><strong>🏆 Active Competitions:</strong> ${competitions}</li>
-                    <li style="margin-bottom: 10px;"><strong>🌍 Address:</strong> ${data.address}</li>
                     <li style="margin-bottom: 10px;"><strong>💻 Website:</strong> <a href="${data.website}" target="_blank" style="color: #001D44;">${data.website}</a></li>
                 </ul>
             </div>

@@ -4,7 +4,17 @@ require_once 'config.php';
 
 // Access the key from the constant defined in config.php
 $apiKey = API_KEY;
-$url = 'https://api.football-data.org/v4/competitions/PL/teams';
+
+// Get the specific Team ID from the frontend request
+if (isset($_GET['id'])) {
+    $teamId = intval($_GET['id']); // Ensure it is an integer
+    $url = "https://api.football-data.org/v4/teams/$teamId";
+} else {
+    // Default fallback or error handling
+    http_response_code(400);
+    echo json_encode(["error" => "No Team ID provided"]);
+    exit;
+}
 
 // Set up the HTTP request headers
 $options = [

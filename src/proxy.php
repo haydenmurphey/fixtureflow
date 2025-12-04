@@ -15,7 +15,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($id > 0) {
     if ($type === 'standings') {
         // Fetch Standings
-        $url = "https://api.football-data.org/v4/competitions/$id/standings?season=2024";
+        $url = "https://api.football-data.org/v4/competitions/$id/standings";
     } else {
         // Fetch Team Details
         $url = "https://api.football-data.org/v4/teams/$id";

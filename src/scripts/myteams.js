@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 if (data.runningCompetitions && data.runningCompetitions.length > 0) {
-                    teamContent.innerHTML = `<p>${teamName} is currently active in ${data.runningCompetitions.length} competitions.</p>`;
+                    teamContent.innerHTML = `<p>${teamName} is currently active in ${data.runningCompetitions.length} competitions. Here are the available standings:</p>`;
                     
                     data.runningCompetitions.forEach(comp => {
                         // Pass teamId to the next function

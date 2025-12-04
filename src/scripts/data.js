@@ -1,3 +1,13 @@
+
+//
+// DATABASE FILE
+//
+// 'https://api.football-data.org/v4/teams/ID'
+//
+// API link above
+// Replace ID with the specific teams ID to get info
+//
+
 const leagues = [
   {
     league: "Premier League",

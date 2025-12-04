@@ -120,19 +120,21 @@ const teamData = {
 
     // Ligue 1
     "Auxerre": 519,
+    "Angers": 0,
     "Brest": 512,
     "Lens": 546,
+    "Le Havre": 0,
     "Lille": 521,
     "FC Lorient": 525,
     "Lyon": 523,
     "Marseille": 516,
     "Monaco": 548,
     "Nantes": 543,
+    "Metz": 0,
     "Nice": 522,
     "Paris FC": 1045,
     "Paris Saint-Germain": 524,
     "Rennes": 0,
-    "Saint-Étienne": 0,
     "Strasbourg": 576,
     "Toulouse": 511,
 };

@@ -60,12 +60,19 @@
                             PROFILE
                         </div>
 
-                        <div id="profile-display-container" style="display: none;">
+                        <!-- DISPLAY CONTAINER (Visible if profile exists) -->
+                        <div id="profile-display-container" class="hidden">
                             <h3>Your Profile</h3>
                             <p id="display-message"></p>
-                            <button id="delete-profile-btn" class="btn" type="button">Delete Profile</button>
+
+                            <!-- Container for Delete and Export buttons -->
+                            <div class="profile-btn-group">
+                                <button id="delete-profile-btn" class="btn" type="button">Delete Profile</button>
+                                <button id="export-profile-btn" class="btn" type="button">Export Profile</button>
+                            </div>
                         </div>
 
+                        <!-- FORM CONTAINER (Visible if no profile exists) -->
                         <div id="profile-form-container">
                             <p>Follow your favorite team.</p>
                             <form id="profile-form">
@@ -85,7 +92,15 @@
                                         <option value="" selected disabled>Select a league first...</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn">Create Profile</button>
+
+                                <!-- Container for Create and Import buttons -->
+                                <div class="profile-btn-group">
+                                    <button type="submit" class="btn">Create Profile</button>
+                                    <button type="button" id="import-profile-btn" class="btn">Import Profile</button>
+                                </div>
+
+                                <!-- Hidden input for file selection -->
+                                <input type="file" id="import-file-input" accept=".json" class="hidden">
                             </form>
                         </div>
                     </div>

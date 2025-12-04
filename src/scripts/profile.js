@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.getElementById('name');
     const mainProfileHeader = document.getElementById('main-profile-header');
 
+    // NEW: Get elements for Import/Export
+    const exportProfileBtn = document.getElementById('export-profile-btn');
+    const importProfileBtn = document.getElementById('import-profile-btn');
+    const importFileInput = document.getElementById('import-file-input');
+
     // --- Functions ---
 
     function showProfile(profile) {
@@ -29,6 +34,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function populateLeagues() {
         if(!leagueSelect) return;
+        
+        // Safety check if data.js didn't load
+        if (typeof leagues === 'undefined') {
+            console.error("Leagues data is missing. Make sure data.js is loaded.");
+            return;
+        }
+
         leagueSelect.innerHTML = '<option value="" selected disabled>Select a league...</option>';
         leagues.forEach(league => {
             const option = document.createElement('option');
@@ -38,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Event Listeners (WITH SAFETY CHECKS) ---
+    // --- Event Listeners ---
 
     if (leagueSelect) {
         leagueSelect.addEventListener('change', function () {
@@ -46,15 +58,17 @@ document.addEventListener('DOMContentLoaded', function () {
             teamSelect.innerHTML = '<option value="" selected disabled>Select a team...</option>';
             teamSelect.disabled = false;
 
-            const selectedLeague = leagues.find(league => league.league === selectedLeagueName);
+            if (typeof leagues !== 'undefined') {
+                const selectedLeague = leagues.find(league => league.league === selectedLeagueName);
 
-            if (selectedLeague) {
-                selectedLeague.teams.forEach(team => {
-                    const option = document.createElement('option');
-                    option.value = team;
-                    option.textContent = team;
-                    teamSelect.appendChild(option);
-                });
+                if (selectedLeague) {
+                    selectedLeague.teams.forEach(team => {
+                        const option = document.createElement('option');
+                        option.value = team;
+                        option.textContent = team;
+                        teamSelect.appendChild(option);
+                    });
+                }
             }
         });
     }
@@ -86,6 +100,75 @@ document.addEventListener('DOMContentLoaded', function () {
                 if(mainProfileHeader) mainProfileHeader.textContent = 'CREATE A PROFILE!';
                 showForm();
             }
+        });
+    }
+
+    // --- NEW: Export Functionality ---
+    if (exportProfileBtn) {
+        exportProfileBtn.addEventListener('click', function() {
+            const savedProfile = localStorage.getItem('userProfile');
+            if (!savedProfile) {
+                alert("No profile to export.");
+                return;
+            }
+            
+            // Create a blob from the JSON string
+            const blob = new Blob([savedProfile], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            
+            // Create a temporary link and click it
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "my_football_profile.json";
+            document.body.appendChild(a);
+            a.click();
+            
+            // Cleanup
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    }
+
+    // --- NEW: Import Functionality ---
+    if (importProfileBtn && importFileInput) {
+        // When the visible button is clicked, click the hidden file input
+        importProfileBtn.addEventListener('click', function() {
+            importFileInput.click();
+        });
+
+        // When a file is selected
+        importFileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                try {
+                    const content = e.target.result;
+                    const parsedProfile = JSON.parse(content);
+
+                    // Basic validation to ensure it's a valid profile
+                    if (parsedProfile.name && parsedProfile.league && parsedProfile.team) {
+                        localStorage.setItem('userProfile', JSON.stringify(parsedProfile));
+                        alert('Profile imported successfully!');
+                        
+                        // Update UI immediately
+                        if(mainProfileHeader) mainProfileHeader.textContent = `WELCOME ${parsedProfile.name.toUpperCase()}!`;        
+                        showProfile(parsedProfile);
+                    } else {
+                        alert("Invalid profile file. Missing required fields.");
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("Error reading file. Please ensure it is a valid JSON file.");
+                }
+            };
+
+            reader.readAsText(file);
+            
+            // Reset the input so the same file can be selected again if needed
+            importFileInput.value = ''; 
         });
     }
 

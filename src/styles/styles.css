@@ -217,6 +217,33 @@ p, ol {
 /* Search Box specific style */
 .search-box {
     margin-top: 0.5rem;
+    position: relative;
+}
+
+#autocomplete-results {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position it right below the input */
+    left: 0;
+    right: 0;
+    border: 1px solid #ddd;
+    background-color: white;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#autocomplete-results div {
+    padding: 10px;
+    cursor: pointer;
+    color: #001D44; /* Dark text for readability */
+    font-size: 1rem;
+}
+
+#autocomplete-results div:hover {
+    background-color: #f0f0f0;
 }
 
 
@@ -240,6 +267,17 @@ p, ol {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* NEW: Utility Classes for Profile Page (Fixes Inline Style Errors) */
+.hidden {
+    display: none;
+}
+
+.profile-btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
 }
 
 /* Media Queries & Responsive    */
@@ -302,40 +340,7 @@ p, ol {
     text-decoration: underline; /* Makes it clear it's a clickable link */
 }
 
-/* Add this to your styles/styles.css file */
-
-.search-box {
-    position: relative;
-}
-
-#autocomplete-results {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 100%; /* Position it right below the input */
-    left: 0;
-    right: 0;
-    border: 1px solid #ddd;
-    background-color: white;
-    z-index: 1000;
-    max-height: 200px;
-    overflow-y: auto;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-#autocomplete-results div {
-    padding: 10px;
-    cursor: pointer;
-    color: #001D44; /* Dark text for readability */
-    font-size: 1rem;
-}
-
-#autocomplete-results div:hover {
-    background-color: #f0f0f0;
-}
-
-/* styles for myteam tab */
-
+/* Chart Box */
 .chart-box {
     background-color: #ffffff;
     border: 1px solid #ced4da;

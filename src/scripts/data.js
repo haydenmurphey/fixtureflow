@@ -36,7 +36,7 @@ const leagues = [
   {
     league: "Ligue 1",
     teams: [
-      "Auxerre", "Brest", "Lens", "Lille", "FC Lorient", "Lyon", "Marseille", "Monaco", "Montpellier", "Nantes", "Nice", "Paris FC", "Paris Saint-Germain", "Reims", "Rennes", "Saint-Étienne", "Strasbourg", "Toulouse",
+      "Auxerre", "Angers", "Brest", "Lens", "Le Havre", "Lille", "FC Lorient", "Lyon", "Marseille", "Monaco", "Nantes", "Metz", "Nice", "Paris FC", "Paris Saint-Germain", "Stade Rennais", "Strasbourg", "Toulouse",
     ],
   },
 ];

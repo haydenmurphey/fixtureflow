@@ -12,20 +12,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Functions ---
 
     function showProfile(profile) {
-        profileFormContainer.style.display = 'none';
-        profileDisplayContainer.style.display = 'block';
-        displayMessage.innerHTML = `Your favorite team is: <strong>${profile.team}</strong>`;
+        if(profileFormContainer) profileFormContainer.style.display = 'none';
+        if(profileDisplayContainer) profileDisplayContainer.style.display = 'block';
+        if(displayMessage) displayMessage.innerHTML = `Your favorite team is: <strong>${profile.team}</strong>`;
     }
 
     function showForm() {
-        profileFormContainer.style.display = 'block';
-        profileDisplayContainer.style.display = 'none';
-        profileForm.reset();
-        teamSelect.innerHTML = '<option value="" selected disabled>Select a league first...</option>';
-        teamSelect.disabled = true;
+        if(profileFormContainer) profileFormContainer.style.display = 'block';
+        if(profileDisplayContainer) profileDisplayContainer.style.display = 'none';
+        if(profileForm) profileForm.reset();
+        if(teamSelect) {
+            teamSelect.innerHTML = '<option value="" selected disabled>Select a league first...</option>';
+            teamSelect.disabled = true;
+        }
     }
 
     function populateLeagues() {
+        if(!leagueSelect) return;
         leagueSelect.innerHTML = '<option value="" selected disabled>Select a league...</option>';
         leagues.forEach(league => {
             const option = document.createElement('option');
@@ -35,51 +38,56 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Event Listeners ---
+    // --- Event Listeners (WITH SAFETY CHECKS) ---
 
-    leagueSelect.addEventListener('change', function () {
-        const selectedLeagueName = this.value;
-        teamSelect.innerHTML = '<option value="" selected disabled>Select a team...</option>';
-        teamSelect.disabled = false;
+    if (leagueSelect) {
+        leagueSelect.addEventListener('change', function () {
+            const selectedLeagueName = this.value;
+            teamSelect.innerHTML = '<option value="" selected disabled>Select a team...</option>';
+            teamSelect.disabled = false;
 
-        const selectedLeague = leagues.find(league => league.league === selectedLeagueName);
+            const selectedLeague = leagues.find(league => league.league === selectedLeagueName);
 
-        if (selectedLeague) {
-            selectedLeague.teams.forEach(team => {
-                const option = document.createElement('option');
-                option.value = team;
-                option.textContent = team;
-                teamSelect.appendChild(option);
-            });
-        }
-    });
+            if (selectedLeague) {
+                selectedLeague.teams.forEach(team => {
+                    const option = document.createElement('option');
+                    option.value = team;
+                    option.textContent = team;
+                    teamSelect.appendChild(option);
+                });
+            }
+        });
+    }
 
-    profileForm.addEventListener('submit', function (event) {
-        event.preventDefault();
+    if (profileForm) {
+        profileForm.addEventListener('submit', function (event) {
+            event.preventDefault();
 
-        const userProfile = {
-            name: nameInput.value,
-            league: leagueSelect.value,
-            team: teamSelect.value
-        };
+            const userProfile = {
+                name: nameInput.value,
+                league: leagueSelect.value,
+                team: teamSelect.value
+            };
 
-        localStorage.setItem('userProfile', JSON.stringify(userProfile));
-        alert('Profile created successfully!');
-        
-        // Update header text on profile creation
-        mainProfileHeader.textContent = `WELCOME ${userProfile.name.toUpperCase()}!`;        showProfile(userProfile);
-    });
+            localStorage.setItem('userProfile', JSON.stringify(userProfile));
+            alert('Profile created successfully!');
+            
+            if(mainProfileHeader) mainProfileHeader.textContent = `WELCOME ${userProfile.name.toUpperCase()}!`;        
+            showProfile(userProfile);
+        });
+    }
 
-    deleteProfileBtn.addEventListener('click', function () {
-        if (confirm('Are you sure you want to delete your profile?')) {
-            localStorage.removeItem('userProfile');
-            alert('Profile deleted.');
+    if (deleteProfileBtn) {
+        deleteProfileBtn.addEventListener('click', function () {
+            if (confirm('Are you sure you want to delete your profile?')) {
+                localStorage.removeItem('userProfile');
+                alert('Profile deleted.');
 
-            // Update header text on profile deletion
-            mainProfileHeader.textContent = 'CREATE A PROFILE!';
-            showForm();
-        }
-    });
+                if(mainProfileHeader) mainProfileHeader.textContent = 'CREATE A PROFILE!';
+                showForm();
+            }
+        });
+    }
 
     // --- Initial Check on Page Load ---
 
@@ -89,11 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (savedProfile) {
         const userProfile = JSON.parse(savedProfile);
-        // If profile exists, set welcome message
-        mainProfileHeader.textContent = `WELCOME ${userProfile.name.toUpperCase()}!`;        showProfile(userProfile);
+        if(mainProfileHeader) mainProfileHeader.textContent = `WELCOME ${userProfile.name.toUpperCase()}!`;        
+        showProfile(userProfile);
     } else {
-        // If no profile, set create profile message
-        mainProfileHeader.textContent = 'CREATE A PROFILE!';
+        if(mainProfileHeader) mainProfileHeader.textContent = 'CREATE A PROFILE!';
         showForm();
     }
 });

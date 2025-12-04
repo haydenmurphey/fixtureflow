@@ -9,15 +9,15 @@ $apiKey = API_KEY;
 $url = "";
 
 // Check for the 'type' of request
-$type = isset($_GET['type']) ? $_GET['type'] : 'team'; // Default to 'team'
+$type = isset($_GET['type']) ? $_GET['type'] : 'team'; 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if ($id > 0) {
     if ($type === 'standings') {
-        // Fetch Standings for a specific competition
-        $url = "https://api.football-data.org/v4/competitions/$id/standings";
+        // Fetch Standings
+        $url = "https://api.football-data.org/v4/competitions/$id/standings?season=2024";
     } else {
-        // Fetch specific Team Details
+        // Fetch Team Details
         $url = "https://api.football-data.org/v4/teams/$id";
     }
 } else {
@@ -31,6 +31,7 @@ $options = [
     'http' => [
         'header' => "X-Auth-Token: " . $apiKey,
         'method' => 'GET',
+        'ignore_errors' => true // <--- IMPORTANT: Prevents crash on 404/403/500
     ],
 ];
 
@@ -46,7 +47,7 @@ if ($response === FALSE) {
     exit;
 }
 
-// Set the content type header
+// Set content type
 header('Content-Type: application/json');
 
 // Echo the response

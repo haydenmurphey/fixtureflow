@@ -91,28 +91,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p style="font-weight: bold; margin-bottom: 5px;">${dateStr} @ ${timeStr}</p>
                 <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">${match.competition.name}</p>
                 
-                <div style="display: flex; align-items: center; justify-content: space-around;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap;">
                     <!-- Home Team -->
-                    <div style="text-align: center; width: 45%;">
+                    <div style="text-align: center; flex: 1; min-width: 0; padding-right: 5px;">
                         <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 5px;">
                             <img src="${match.homeTeam.crest}" alt="${match.homeTeam.shortName}" 
                                  style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                         </div>
-                        <span style="font-size: 0.9rem; font-weight: bold; display: block; line-height: 1.2;">${match.homeTeam.shortName}</span>
+                        <span style="font-size: 0.9rem; font-weight: bold; display: block; line-height: 1.2; word-wrap: break-word;">${match.homeTeam.shortName}</span>
                     </div>
 
                     <!-- Score / VS -->
-                    <div style="font-weight: bold; font-size: 1.2rem; color: #001D44; padding: 0 10px;">
+                    <div style="flex: 0 0 auto; font-weight: bold; font-size: 1.2rem; color: #001D44; margin: 0 10px; white-space: nowrap;">
                         ${scoreDisplay}
                     </div>
 
                     <!-- Away Team -->
-                    <div style="text-align: center; width: 45%;">
+                    <div style="text-align: center; flex: 1; min-width: 0; padding-left: 5px;">
                         <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 5px;">
                             <img src="${match.awayTeam.crest}" alt="${match.awayTeam.shortName}" 
                                  style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
                         </div>
-                        <span style="font-size: 0.9rem; font-weight: bold; display: block; line-height: 1.2;">${match.awayTeam.shortName}</span>
+                        <span style="font-size: 0.9rem; font-weight: bold; display: block; line-height: 1.2; word-wrap: break-word;">${match.awayTeam.shortName}</span>
                     </div>
                 </div>
             </div>

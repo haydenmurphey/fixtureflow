@@ -57,24 +57,24 @@
                 <div class="col-12 col-lg-6">
                     <div class="content-block">
                         <div class="blue-box">
-                            <a href="recent.html">RECENT</a>
+                            RECENT
                         </div>
-                        <p>This is the first content block. On desktop, it's the left column. On mobile, it's the top stacked block.
-                        The image below is a placeholder for once the API data is setup.
-                        </p>
-                        <img src="images/temp_img.png" alt="Placeholder image for recent games on the home screen">
+                        <!-- Container for Dynamic Recent Match Content -->
+                        <div id="recent-match-container">
+                            <p>Loading recent match...</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-lg-6">
                     <div class="content-block">
                         <div class="blue-box">
-                            <a href="upcoming.html">UPCOMING</a>
+                            UPCOMING
                         </div>
-                        <p>This is the second content block. On desktop, it's the right column. On mobile, it's the bottom stacked block.
-                            The image below is a placeholder for once the API data is setup.
-                        </p>
-                        <img src="images/temp_img.png" alt="Placeholder image for upcoming games on the home screen">
+                        <!-- Container for Dynamic Upcoming Match Content -->
+                        <div id="upcoming-match-container">
+                            <p>Loading upcoming match...</p>
+                        </div>
                     </div>
                 </div>
 
@@ -91,6 +91,8 @@
     <script src="scripts/data.js"></script>
     <script src="scripts/search.js"></script>
     <script src="scripts/profile.js"></script>
+    <!-- NEW: Home Page Logic -->
+    <script src="scripts/home.js"></script>
 
 </body>
 </html>

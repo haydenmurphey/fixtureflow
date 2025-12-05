@@ -16,8 +16,14 @@ if ($id > 0) {
     if ($type === 'standings') {
         // Fetch Standings
         $url = "https://api.football-data.org/v4/competitions/$id/standings";
+    } elseif ($type === 'matches_finished') {
+        // Fetch Finished Matches (Recent)
+        $url = "https://api.football-data.org/v4/teams/$id/matches?status=FINISHED";
+    } elseif ($type === 'matches_scheduled') {
+        // Fetch Scheduled Matches (Upcoming)
+        $url = "https://api.football-data.org/v4/teams/$id/matches?status=SCHEDULED";
     } else {
-        // Fetch Team Details
+        // Fetch Team Details (Default)
         $url = "https://api.football-data.org/v4/teams/$id";
     }
 } else {

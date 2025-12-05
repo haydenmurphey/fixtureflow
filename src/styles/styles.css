@@ -367,3 +367,13 @@ p, ol {
 #my-team-content {
     margin-bottom: 20px;
 }
+
+#upcoming-match-container {
+    text-align: center; 
+    padding-top: 20px;
+}
+
+#recent-match-container {
+    text-align: center; 
+    padding-top: 20px;
+}

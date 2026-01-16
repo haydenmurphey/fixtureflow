@@ -3,33 +3,28 @@
 
 ## Live Site: https://fixtureflow.page.gd
 
+---
+
+## Project Overview
+
+Fixture Flow is a personalized, accessibility-first web application designed to solve "information overload" in sports tracking. While most soccer platforms overwhelm users with dense layouts and unnecessary data, Fixture Flow prioritizes a clean, curated experience. Users can select their favorite teams and leagues to create a bespoke home screen that delivers real-time scores and upcoming schedules at a glance.
 
 ---
 
-## Purpose
+## Key Features
 
-With the ever-increasing number of sports tracking sites, more specifically for soccer, we aim to be the last one you will ever need. Every day there are many soccer games being played all over the world, and you need just one site that will keep you up to date. No more confusing layouts where they overwhelm you with information and unnecessary details. **Fixture Flow will just show what you want to see.** We leave it to the user to pick their favorite teams and which teams they want on their home screen. There will still be a search bar available to allow users to view other leagues that may not be selected as one of their favorites, but the focus will be on the user’s favorites.
-
----
-
-## Users
-
-This website will be designed for anyone of any background who enjoys the sport of soccer. No technical skills or knowledge will be needed. Just simply select your favorite teams and be kept up to date on their schedules and game times. Life can be very overwhelming, but the goal is to make it quick and easy to view your team. We want the experience to be tailored and made for the fan with their interests in mind. I see this product to be more focused on younger people, including students. Many older fans of the sport have been dedicated to their team for plenty of years, so they will be more concrete with their favorites and won’t ever switch up on them. We want to help young people find their team and experience the many different styles that soccer presents.
+* **Personalized Dashboard:** A "Favorites-First" UI that allows users to follow specific teams and leagues, removing clutter from the home screen.
+* **Real-Time Data:** Integration with third-party APIs to provide live updates on match fixtures, dates, and times.
+* **Seamless Navigation:** Includes a dedicated "My Team" management tab and a league-specific search functionality for broader discovery.
+* **Persistent Experience:** Utilizes local storage to ensure user preferences remain saved across sessions without requiring a complex login process.
 
 ---
 
-## Features
+## Technical Highlights
 
-When the user first ever opens up the site, they will be presented with an option to pick their team. Additionally, there will be options to select multiple teams if they have other favorites from different leagues. After that, they will also have the option to pick which of them will be on your home screen or, once again, if they want multiple. Then, they’re all set up! Check back at any time and they will be able to view their team right from the home screen, making the process quick. If ever they change your mind and want to support a different team, you can go to the "my team" tab and make that change. When clicking on the "leagues" tab, a drop-down menu will appear, allowing the user to find the specific league they are searching for.
+* **Architecture:** Built as a persistent client-side web application using asynchronous JavaScript for real-time API integration.
+* **CRUD Implementation:** Full Create, Read, Update, and Delete capabilities for managing user-selected data and team preferences.
+* **Accessibility:** Developed with an "Accessibility First" mindset, ensuring full WCAG compliance for a diverse user base.
+* **Performance:** Optimized for speed and simplicity, specifically targeting new fans and students who need quick, mobile-friendly updates.
 
 ---
-
-## Data
-
-Users will be working with CRUD to improve their experience. This can be seen in these ways:
-
-* **Create:** When a user selects their team, that data will then be stored for whenever they visit the webpage.
-* **Read:** The users will be able to interact with the API’s data that will display game dates, times, etc.
-* **Update:** They will be able to see up-to-date information on upcoming fixtures utilizing the API data, and when they make changes on their team, that will also be updated.
-* **Delete:** Any information that the user provides is able to be deleted whenever they so choose.
-

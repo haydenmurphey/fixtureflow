@@ -1,10 +1,5 @@
-# CS 343 F25 Final Project
-
-## Milestone 1
 
 # FIXTURE FLOW: A website to check your favorite soccer team’s schedule and scores
-
-**Team name:** Group Name (Hayden Murphey)
 
 ---
 

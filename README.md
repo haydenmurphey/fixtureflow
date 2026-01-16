@@ -28,11 +28,5 @@ Users will be working with CRUD to improve their experience. This can be seen in
 * **Create:** When a user selects their team, that data will then be stored for whenever they visit the webpage.
 * **Read:** The users will be able to interact with the API’s data that will display game dates, times, etc.
 * **Update:** They will be able to see up-to-date information on upcoming fixtures utilizing the API data, and when they make changes on their team, that will also be updated.
-* **Delete:** Similar to the above points, that
+* **Delete:** Any information that the user provides is able to be deleted whenever they so choose.
 
-## Milestone 2
-
-Complete the assignment as specified on [the inter-section website](https://w3.cs.jmu.edu/cs343/f25/project/), but all of your source code (which should have no javascript at this point!) belongs in the `src/` directory
-
-## Milestone 3
-Complete the assignment as specified on [the inter-section website](https://w3.cs.jmu.edu/cs343/f25/project/), but all of your source code (which should now include javascript) belongs in the `src/` directory

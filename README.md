@@ -3,6 +3,8 @@
 
 ---
 
+Live Site Link @ https://fixtureflow.page.gd/
+
 ## Purpose
 
 With the ever-increasing number of sports tracking sites, more specifically for soccer, we aim to be the last one you will ever need. Every day there are many soccer games being played all over the world, and you need just one site that will keep you up to date. No more confusing layouts where they overwhelm you with information and unnecessary details. **Fixture Flow will just show what you want to see.** We leave it to the user to pick their favorite teams and which teams they want on their home screen. There will still be a search bar available to allow users to view other leagues that may not be selected as one of their favorites, but the focus will be on the user’s favorites.

@@ -1,7 +1,7 @@
 
 # FIXTURE FLOW: A website to check your favorite soccer team’s schedule and scores
 
-## Live Site: fixtureflow.page.gd
+## Live Site: https://fixtureflow.page.gd
 
 
 ---
